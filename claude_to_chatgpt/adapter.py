@@ -42,7 +42,7 @@ class ClaudeAdapter:
         return prompt
 
     def openai_to_claude_params(self, openai_params):
-        model = model_map.get(openai_params["model"], "claude-2")
+        model = model_map.get(openai_params["model"], openai_params["model"])
         messages = openai_params["messages"]
 
         prompt = self.convert_messages_to_prompt(messages)
